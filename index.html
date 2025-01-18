@@ -1,0 +1,297 @@
+<html lang="en" page-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cafe&Code</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="./coffe_icon-icons.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Mochiy+Pop+One&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <header>
+    <nav class="navbar container">
+      <ul class="navbar list">
+        <li class="list-element"><a href="#">Home</a></li>
+        <li class="list-element"><a href="#menu-container">Our Menu</a></li>
+        <li class="list-element">
+          <a href="#form-section-container">Contact</a>
+        </li>
+      </ul>
+      <div class="switch container">
+        <button id="toggler" type="button" onclick="toggleTheme()">
+          <img src="darkmode.svg" />
+        </button>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <div class="section title">
+      <!-- <img src="./backround_image.webp" /> -->
+      <h3 class="text subtitle">Welcome to</h3>
+      <h1 class="title" id="title">Code & Coffee</h1>
+      <h3 class="text subtitle" id="subtitle">
+        The perfect place where coffee meets creativity.
+      </h3>
+    </div>
+
+    <div class="section menu" id="menu-container">
+      <h2 class="text title section">Our Menu</h2>
+      <table class="menu coffee">
+        <h3 class="table coffee">☕ Coffee</h3>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Espresso
+            <button
+              class="add"
+              id="add-espresso"
+              type="button"
+              onclick="increaseQuantity('#espresso-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            A rich and intense Italian classic, brewed to perfection for a bold
+            coffee experience.
+          </td>
+          <td colspan="1">
+            $1.00
+            <div class="item-quantity">
+              <p id="espresso-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Cappuccino
+            <button
+              class="add"
+              id="add-cappuccino"
+              type="button"
+              onclick="increaseQuantity('#cappuccino-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            Smooth espresso topped with creamy steamed milk and a light foam for
+            a perfect balance
+          </td>
+          <td>
+            $1.50
+            <div class="item-quantity">
+              <p id="cappuccino-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Cold Brew
+            <button
+              class="add"
+              id="add-coldbrew"
+              type="button"
+              onclick="increaseQuantity('#coldBrew-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            Slow-brewed for 12 hours, this refreshing coffee is smooth, bold,
+            and naturally sweet.
+          </td>
+          <td>
+            $3.50
+            <div class="item-quantity">
+              <p id="coldBrew-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+      <h3 class="table tea">🍵 Tea & Infusions</h3>
+      <table class="menu tea">
+        <tr>
+          <td class="menu-item" colspan="1">
+            Green Tea
+            <button
+              class="add"
+              id="add-greentea"
+              type="button"
+              onclick="increaseQuantity('#greenTea-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            A delicate blend of high-quality green tea leaves, rich in
+            antioxidants for a refreshing break.
+          </td>
+          <td>
+            $2.00
+            <div class="item-quantity">
+              <p id="greenTea-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Black Tea
+            <button
+              class="add"
+              id="add-blacktea"
+              type="button"
+              onclick="increaseQuantity('#blackTea-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            Bold and full-bodied, our black tea delivers deep flavors and a
+            comforting aroma.
+          </td>
+          <td>
+            $2.00
+            <div class="item-quantity">
+              <p id="blackTea-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Relaxing Herbal Tea
+            <button
+              class="add"
+              id="add-herbtea"
+              type="button"
+              onclick="increaseQuantity('#herbTea-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            A soothing herbal blend with chamomile and lavender to help you
+            unwind.
+          </td>
+          <td>
+            $2.20
+            <div class="item-quantity">
+              <p id="herbTea-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+
+      <h3 class="table desserts">🍰 Desserts</h3>
+      <table>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Cheesecake
+            <button
+              class="add"
+              id="add-cheesecake"
+              type="button"
+              onclick="increaseQuantity('#cheesecake-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            Creamy and rich cheesecake with a buttery biscuit base, topped with
+            seasonal fruit.
+          </td>
+          <td>
+            $4.00
+            <div class="item-quantity">
+              <p id="cheesecake-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+
+        <tr>
+          <td class="menu-item" colspan="1">
+            Croissant
+            <button
+              class="add"
+              id="add-croissant"
+              type="button"
+              onclick="increaseQuantity('#croissant-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            Freshly baked buttery croissant, light and flaky, perfect for any
+            time of the day.
+          </td>
+          <td>
+            $2.50
+            <div class="item-quantity">
+              <p id="croissant-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td class="menu-item" colspan="1">
+            Chocolate Muffin
+            <button
+              class="add"
+              id="add-muffin"
+              type="button"
+              onclick="increaseQuantity('#muffin-quantity')"
+            >
+              +
+            </button>
+          </td>
+          <td class="description" colspan="2">
+            A soft and moist muffin packed with rich chocolate chips for a
+            decadent treat.
+          </td>
+          <td>
+            $3.00
+            <div class="item-quantity">
+              <p id="muffin-quantity">0</p>
+            </div>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="section form" id="form-section-container">
+      <h2 class="text title section">Get in Touch With Us</h2>
+      <form class="form-container">
+        <label class="text label" for="name">Name:</label>
+        <input class="input-text" type="text" id="name" name="name" required />
+        <label class="text label" for="email">Email:</label>
+        <input
+          class="input-text"
+          type="email"
+          id="email"
+          name="email"
+          required
+        />
+        <label class="text label" for="message">Message:</label>
+        <textarea
+          class="input-text"
+          id="message"
+          name="message"
+          required
+          rows="5"
+        ></textarea>
+        <button class="send-button">Send Message</button>
+      </form>
+    </div>
+  </body>
+  <footer id="contacts-info">
+    <h3 class="text contacts">Contacts informations</h3>
+    <ul class="contacts-info">
+      <li class="text">Phone: +39 123 456 7890</li>
+      <li class="text">Email: info@codecoffee.it</li>
+      <li class="text">Address: Via del Caffè 42, Milan</li>
+    </ul>
+  </footer>
+  <script src="index.js"></script>
+</html>
